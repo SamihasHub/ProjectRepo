@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Budgets.BudgetSceneController">
+   <top>
+      <MenuBar style="-fx-background-color: lavender;" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="goToDashMenuItem" mnemonicParsing="false" onAction="#goToDashMenuItemOnOnClick" text="Dashboard" />
+                  <MenuItem fx:id="shareStgMenuItem" mnemonicParsing="false" onAction="#shareStgMenuItemOnOnClick" text="Share" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <AnchorPane prefHeight="452.0" prefWidth="650.0" style="-fx-background-color: f0ffff;" BorderPane.alignment="CENTER">
+         <children>
+            <Line endX="-100.0" endY="381.0" layoutX="342.0" layoutY="37.0" startX="-100.0" />
+            <Text layoutX="21.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budget Making Section">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="314.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budget Viewing Section">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <TableView fx:id="bugetTableView" editable="true" layoutX="268.0" layoutY="111.0" prefHeight="308.0" prefWidth="358.0">
+              <columns>
+                <TableColumn fx:id="expenditureColumn" prefWidth="207.33331298828125" text="Expenditures" />
+                <TableColumn fx:id="expenseColmn" minWidth="0.0" prefWidth="148.66668701171875" text="Expenses " />
+              </columns>
+            </TableView>
+            <Text layoutX="5.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expenditure:" />
+            <Text layoutX="13.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expenses:" />
+            <Text layoutX="272.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Previous Budget:" />
+            <Text layoutX="13.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budget of:" />
+            <TextField fx:id="expendiTextField" layoutX="80.0" layoutY="95.0" prefHeight="25.0" prefWidth="109.0" />
+            <TextField fx:id="ExpensTextField" layoutX="79.0" layoutY="130.0" prefHeight="25.0" prefWidth="108.0" />
+            <TextField fx:id="yearTextField" layoutX="80.0" layoutY="62.0" prefHeight="25.0" prefWidth="107.0" />
+            <Text layoutX="14.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total:" />
+            <TextField fx:id="totalAmTextField" layoutX="79.0" layoutY="163.0" prefHeight="25.0" prefWidth="108.0" />
+            <Button fx:id="prepareSaveButton" layoutX="16.0" layoutY="220.0" mnemonicParsing="false" onAction="#prepareSaveButtonOnClick" text="Prepare Budget" />
+            <Button fx:id="viewPrevButton" layoutX="539.0" layoutY="47.0" mnemonicParsing="false" onAction="#viewPrevButtonOnClick" text="View " />
+            <Button fx:id="deleteBudButton" layoutX="151.0" layoutY="401.0" mnemonicParsing="false" onAction="#deleteBudButtonOnClick" text="Delete" />
+            <Button fx:id="downloadBudgButton" layoutX="127.0" layoutY="220.0" mnemonicParsing="false" onAction="#downloadBudgButtonOnClick" text="Download" />
+            <Line endX="-100.0" endY="381.0" layoutX="317.0" layoutY="-118.0" startX="-300.3333435058594" startY="381.0" />
+            <Text layoutX="29.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budget Editing Section">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Button fx:id="updateBudButton" layoutX="38.0" layoutY="401.0" mnemonicParsing="false" onAction="#updateBudButtonOnClick" text="Update" />
+            <Text layoutX="30.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budget " />
+            <MenuButton layoutX="77.0" layoutY="329.0" mnemonicParsing="false" text="Select File">
+              <items>
+                <MenuItem fx:id="editFileChooser" mnemonicParsing="false" onAction="#editFileChooserOnClick" text="Open a File" />
+              </items>
+            </MenuButton>
+            <MenuButton layoutX="361.0" layoutY="49.0" mnemonicParsing="false" text="Select File">
+               <items>
+                  <MenuItem fx:id="prevBudFileChooser" mnemonicParsing="false" onAction="#prevBudFileChooserOnClick" text="Open a File" />
+               </items>
+            </MenuButton>
+            <Label fx:id="yearViewLabel" layoutX="269.0" layoutY="91.0" prefHeight="17.0" prefWidth="205.0" text="Showing Budget of Year:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="saveTxtFileCheckBox" layoutX="19.0" layoutY="193.0" mnemonicParsing="false" text="Save as Text File" />
+            <Button fx:id="viewEditButton" layoutX="100.0" layoutY="372.0" mnemonicParsing="false" onAction="#viewEditButtonOnClick" text="View" />
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
