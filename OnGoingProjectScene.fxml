@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OnGoingProjects.OnGoingProjectSceneController">
+   <right>
+      <AnchorPane prefHeight="378.0" prefWidth="600.0" style="-fx-background-color: f0ffff;" BorderPane.alignment="CENTER">
+         <children>
+            <MenuButton layoutX="144.0" layoutY="4.0" mnemonicParsing="false" text="Import Data">
+               <items>
+                  <MenuItem fx:id="openMultipleProjectsMenuitem" mnemonicParsing="false" onAction="#multipleFileChooserProMenuItemOnClick" text="Open Projects" />
+               </items>
+            </MenuButton>
+            <Text layoutX="6.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Load all Ongoing Projects" />
+            <Label fx:id="progressResultsLabel" layoutX="379.0" layoutY="275.0" prefHeight="45.0" prefWidth="207.0" style="-fx-border-color: blue; -fx-background-color: white;" wrapText="true" />
+            <Button fx:id="checkProgressButton" layoutX="377.0" layoutY="216.0" mnemonicParsing="false" onAction="#checkProgressButtonOnClick" prefHeight="25.0" prefWidth="97.0" text="Check Progress" />
+            <Text layoutX="303.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Results" textAlignment="CENTER" wrappingWidth="83.400390625">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <TableView fx:id="selectedProjectTable" layoutX="249.0" layoutY="7.0" prefHeight="200.0" prefWidth="337.0">
+              <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="87.6666259765625" text="Project Name" />
+                <TableColumn fx:id="timeColumn" prefWidth="73.33331298828125" text="Total Time" />
+                  <TableColumn fx:id="budgetColumn" prefWidth="87.0" text="Total Budget" />
+                  <TableColumn fx:id="rawMaterialsColumn" editable="false" minWidth="0.0" prefWidth="85.3333740234375" text="Raw Materials" />
+              </columns>
+            </TableView>
+            <Button fx:id="sendEmailButton" layoutX="503.0" layoutY="327.0" mnemonicParsing="false" onAction="#sendEmailButtonOnClick" prefHeight="25.0" prefWidth="68.0" text="Send" />
+            <Label fx:id="ongoingProjectViewLabel" layoutX="12.0" layoutY="32.0" prefHeight="171.0" prefWidth="224.0" style="-fx-border-color: blue; -fx-background-color: white;" wrapText="true" />
+            <Text layoutX="5.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name" />
+            <Text layoutX="13.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Time" />
+            <Text layoutX="7.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Budget" />
+            <Text layoutX="4.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raw Materials" />
+            <TextField fx:id="nameTextField" layoutX="83.0" layoutY="216.0" />
+            <TextField fx:id="timeTextField" layoutX="83.0" layoutY="245.0" />
+            <TextField fx:id="budgetTextField" layoutX="83.0" layoutY="272.0" />
+            <TextField fx:id="materialsTextField" layoutX="83.0" layoutY="301.0" />
+            <Button fx:id="upload2TableButton" layoutX="97.0" layoutY="333.0" mnemonicParsing="false" onAction="#upload2TableButtonOnClick" prefHeight="25.0" prefWidth="119.0" text="Upload to Table" />
+            <Line endX="163.33331298828125" layoutX="418.0" layoutY="258.0" startX="-158.66668701171875" strokeWidth="2.0" />
+         </children>
+      </AnchorPane>
+   </right>
+   <top>
+      <AnchorPane prefHeight="15.0" prefWidth="600.0" style="-fx-background-color: lavender;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="goToDashButton" mnemonicParsing="false" onAction="#goToDashButtonOnClick" style="-fx-background-color: lavender;" text="Go to Dashboard" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

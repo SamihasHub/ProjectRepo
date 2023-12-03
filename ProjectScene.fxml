@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Projects.ProjectSceneController">
+   <center>
+      <AnchorPane prefHeight="397.0" prefWidth="640.0" style="-fx-background-color: f0ffff;" BorderPane.alignment="CENTER">
+         <children>
+            <MenuButton layoutX="496.0" layoutY="2.0" mnemonicParsing="false" text="Fetch Invoice">
+              <items>
+                <MenuItem fx:id="invoiceFileChooserMenuItem" mnemonicParsing="false" onAction="#multipleInvoiceFileChooserMenuItemOnClick" text="Open Invoices" />
+              </items>
+            </MenuButton>
+            <MenuButton layoutX="111.0" layoutY="3.0" mnemonicParsing="false" text="Import Data">
+               <items>
+                  <MenuItem fx:id="openMultipleProjectsMenuitem" mnemonicParsing="false" onAction="#multipleFileChooserProMenuItemOnClick" text="Open Projects" />
+               </items>
+            </MenuButton>
+            <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Load all Projects" wrappingWidth="102.13671875">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Label fx:id="allProjectViewLabel" layoutX="14.0" layoutY="35.0" prefHeight="171.0" prefWidth="261.0" style="-fx-border-color: blue; -fx-background-color: white;" wrapText="true" />
+            <Text layoutX="349.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Load Invoices of Projects" wrappingWidth="146.13671875">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Label fx:id="allInvoiceViewLabel" layoutX="349.0" layoutY="35.0" prefHeight="171.0" prefWidth="268.0" style="-fx-border-color: blue; -fx-background-color: white;" wrapText="true" />
+            <Text layoutX="38.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name" />
+            <Text layoutX="37.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raw Materials" />
+            <TextField fx:id="nameTextField" layoutX="6.0" layoutY="285.0" />
+            <TextField fx:id="materialsTextField" layoutX="6.0" layoutY="335.0" />
+            <Text layoutX="209.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invoice Project Name" />
+            <Text layoutX="207.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raw Materials Invoice" />
+            <TextField fx:id="invoiceMaterialsTextField" layoutX="192.0" layoutY="331.0" />
+            <TextField fx:id="invoiceNameTextField" layoutX="192.0" layoutY="281.0" />
+            <Text layoutX="161.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VS" textAlignment="CENTER" wrappingWidth="26.136688232421875">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="11.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matching Project materials with Invoices" textAlignment="CENTER" wrappingWidth="335.47003173828125">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Label fx:id="resultsViewLabel" layoutX="428.0" layoutY="271.0" prefHeight="95.0" prefWidth="201.0" style="-fx-border-color: blue; -fx-background-color: white;" wrapText="true" />
+            <Text layoutX="486.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESULTS">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <Button fx:id="matchButton" layoutX="358.0" layoutY="288.0" mnemonicParsing="false" onAction="#matchButtonOnClick" prefHeight="54.0" prefWidth="50.0" text="Match" />
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="0.0" prefWidth="639.0" style="-fx-background-color: lavender;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="goToDashButton" layoutX="2.0" layoutY="-1.0" mnemonicParsing="false" onAction="#goToDashButtonOnClick" prefHeight="14.0" prefWidth="107.0" style="-fx-background-color: lavender;" text="Go to Dashboard" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

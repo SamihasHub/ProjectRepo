@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Deals.DealsSceneController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: f0ffff;" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="13.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Deal Section">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="328.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deals Viewing Section">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="23.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deal Name:" />
+            <Text layoutX="6.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company Name:" />
+            <Text layoutX="331.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Previous Deals:" />
+            <Text layoutX="7.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Invested:" />
+            <TextField fx:id="compNameTextField" layoutX="108.0" layoutY="77.0" prefHeight="25.0" prefWidth="109.0" />
+            <TextField fx:id="dealNameTextField" layoutX="108.0" layoutY="43.0" prefHeight="25.0" prefWidth="108.0" />
+            <Button fx:id="createSaveButton" layoutX="132.0" layoutY="175.0" mnemonicParsing="false" onAction="#createSaveButtonOnClick" text="Create Deal And View" />
+            <Button fx:id="downloadDealButton" layoutX="100.0" layoutY="214.0" mnemonicParsing="false" onAction="#downloadDealButtonOnClick" text="Download" />
+            <Text layoutX="336.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deals Editing Section">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Button fx:id="updateNDelButton" layoutX="471.0" layoutY="244.0" mnemonicParsing="false" onAction="#updateNDelButtonOnClick" text="Update &amp; Delete" />
+            <MenuButton layoutX="416.0" layoutY="32.0" mnemonicParsing="false" text="Select File">
+               <items>
+                  <MenuItem fx:id="prevDealFileChooser" mnemonicParsing="false" onAction="#prevDealFileChooserOnClick" text="Open a File" />
+               </items>
+            </MenuButton>
+            <CheckBox fx:id="saveTxtFileCheckBox" layoutX="16.0" layoutY="175.0" mnemonicParsing="false" text="Save as Text File" />
+            <TextField fx:id="amInvesTextField" layoutX="107.0" layoutY="112.0" prefHeight="25.0" prefWidth="108.0" />
+            <Text layoutX="16.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creation Date:" />
+            <DatePicker fx:id="datePicker" layoutX="107.0" layoutY="143.0" prefHeight="25.0" prefWidth="123.0" />
+            <TextArea fx:id="editDealTextArea" layoutX="323.0" layoutY="275.0" prefHeight="200.0" prefWidth="336.0" wrapText="true" />
+            <Label fx:id="newDealLabel" layoutX="8.0" layoutY="253.0" prefHeight="223.0" prefWidth="287.0" style="-fx-border-color: blue;" />
+            <Label fx:id="prevDealLabel" layoutX="321.0" layoutY="64.0" prefHeight="149.0" prefWidth="340.0" style="-fx-border-color: blue;" />
+            <CheckBox fx:id="editCheckBbox" layoutX="352.0" layoutY="248.0" mnemonicParsing="false" text="Check to Edit" />
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="9.0" prefWidth="671.0" style="-fx-background-color: lavender;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="goToDashButton" mnemonicParsing="false" onAction="#goToDashButtonOnClick" style="-fx-background-color: lavender;" text="Go to Dashboard" />
+            <Button fx:id="shareStgButton" layoutX="107.0" mnemonicParsing="false" onAction="#shareStgButtonOnClick" style="-fx-background-color: lavender;" text="Share Option" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
