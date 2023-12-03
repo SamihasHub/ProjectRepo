@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
@@ -23,8 +24,6 @@ public class ShareStageSceneController implements Initializable {
     private TextField emailTextFielfd;
     @FXML
     private Button sendEmailButton;
-    @FXML
-    private Button exitButton;
 
     /**
      * Initializes the controller class.
@@ -36,10 +35,22 @@ public class ShareStageSceneController implements Initializable {
 
     @FXML
     private void sendEmailButtonOnClick(ActionEvent event) {
+        
+        int len = emailTextFielfd.getLength();
+        String size = String.valueOf(len);
+        
+        if ("0".equals(size)){ 
+            Alert a = new Alert(Alert.AlertType.ERROR);
+                a.setContentText("Empty Email field!");
+                a.showAndWait();}
+        
+        else{
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+        a.setContentText("Email Send!");
+        a.showAndWait();
+    }
+        
     }
 
-    @FXML
-    private void existButtonOnClick(ActionEvent event) {
-    }
     
 }

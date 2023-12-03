@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="693.0" style="-fx-background-color: F0FFFF;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Mainpkg.SupplyChainDashboard.Inventory.NewOrders.NewOrdersSceneController">
+   <children>
+      <Button layoutX="591.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#BackOnClick" text="Back" />
+      <TextField layoutX="316.0" layoutY="53.0" />
+      <TextField layoutX="316.0" layoutY="87.0" />
+      <Text layoutX="113.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name of Drug" wrappingWidth="152.00000244006515" />
+      <Text layoutX="113.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" wrappingWidth="103.98307228088379" />
+      <Button layoutX="452.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#AddToListOnClick" prefHeight="32.0" prefWidth="193.0" text="Add To List" />
+      <Button layoutX="549.0" layoutY="457.0" mnemonicParsing="false" onMouseClicked="#SendToPendingDeliveriesOnClick" prefHeight="32.0" prefWidth="85.0" text="Confirm" />
+      <TableView layoutX="113.0" layoutY="252.0" prefHeight="200.0" prefWidth="485.0">
+        <columns>
+          <TableColumn prefWidth="195.0" text="Name of Drug" />
+          <TableColumn prefWidth="85.0" text="Quantity" />
+            <TableColumn prefWidth="105.0" text="Date of Order" />
+            <TableColumn prefWidth="99.0" text="Ordered By" />
+        </columns>
+      </TableView>
+      <DatePicker layoutX="113.0" layoutY="191.0" promptText="Date of Order">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </DatePicker>
+      <RadioButton layoutX="110.0" layoutY="145.0" mnemonicParsing="false" text="Dealer Order" />
+      <RadioButton layoutX="292.0" layoutY="145.0" mnemonicParsing="false" text="Clinic Order" />
+      <RadioButton layoutX="468.0" layoutY="145.0" mnemonicParsing="false" text="Factory Order" />
+   </children>
+</AnchorPane>

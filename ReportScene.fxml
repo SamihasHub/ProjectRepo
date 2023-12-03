@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="623.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Reports.ReportSceneController">
-   <top>
-      <MenuBar style="-fx-background-color: lavender;" BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="Home">
-            <items>
-              <MenuItem fx:id="dashBMenuItem" mnemonicParsing="false" onAction="#dashBMenuItemOnClick" text="DashBoard" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
    <center>
       <AnchorPane prefHeight="375.0" prefWidth="587.0" style="-fx-background-color: f0ffff;" BorderPane.alignment="CENTER">
          <children>
@@ -57,8 +44,15 @@
             </MenuButton>
             <Button fx:id="downloadButton" layoutX="36.0" layoutY="340.0" mnemonicParsing="false" onAction="#downloadButtonOnClick" text="Download" />
             <Button fx:id="shareButton" layoutX="533.0" layoutY="340.0" mnemonicParsing="false" onAction="#shareButtonOnClick" prefHeight="25.0" prefWidth="56.0" text="Share" />
-            <TextArea fx:id="viewSelectedFileTextArea" editable="false" layoutX="12.0" layoutY="113.0" prefHeight="221.0" prefWidth="595.0" wrapText="true" />
+            <Label fx:id="viewSelectedFileLabel" layoutX="6.0" layoutY="111.0" prefHeight="224.0" prefWidth="610.0" style="-fx-background-color: white;" />
          </children>
       </AnchorPane>
    </center>
+   <top>
+      <AnchorPane prefHeight="13.0" prefWidth="623.0" style="-fx-background-color: lavender;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="goToDashButton" layoutX="-1.0" layoutY="-3.0" mnemonicParsing="false" onAction="#goToDashButtonOnClick" style="-fx-background-color: lavender;" text="Go to Dashboard" />
+         </children>
+      </AnchorPane>
+   </top>
 </BorderPane>

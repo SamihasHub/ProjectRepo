@@ -6,6 +6,7 @@ package AccountsOfficer;
  */
 
 
+import Login.pkg.SceneSwitcher;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,6 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.MenuItem;
@@ -28,22 +30,15 @@ import javafx.stage.Stage;
 public class AccountsDashboardSceneController implements Initializable {
 
     @FXML    private Button signOutButton;
-    @FXML    private ComboBox<String> proflieComboBox;
     @FXML    private Button statementsButton;
     @FXML    private Button salaryButton;
     @FXML    private Button billSceneButton;
-    @FXML
-    private Button budgetSceneButton;
-    @FXML
-    private Button reportsSceneButton;
-    @FXML
-    private Button dealsSceneButton;
-    @FXML
-    private Button balanceSheetSceneButton;
-    @FXML
-    private MenuItem taxReturnSceneMenuItem;
-    @FXML
-    private MenuItem prepareTaxReturnSceneMenuItem;
+    @FXML    private Button budgetSceneButton;
+    @FXML    private Button reportsSceneButton;
+    @FXML    private Button dealsSceneButton;
+    @FXML    private Button balanceSheetSceneButton;
+    @FXML    private Button prepareTaxReturnSceneButton;
+    @FXML    private Button taxReturnSceneButton;
 
     /**
      * Initializes the controller class.
@@ -53,45 +48,50 @@ public class AccountsDashboardSceneController implements Initializable {
         // TODO
     }    
 
-    @FXML    private void signOutButtonOnClick(ActionEvent event) {
+    @FXML   private void signOutButtonOnClick(ActionEvent event) {
+        SceneSwitcher.switchToScene(SceneSwitcher.getStageFromEvent(event), "Login/pkg/LoginPageScene.fxml");
     }
 
-    @FXML    private void statementsButtonOnClick(ActionEvent event) {
+    @FXML   private void statementsButtonOnClick(ActionEvent event){
+        SceneSwitcher.switchToScene(SceneSwitcher.getStageFromEvent(event), "Statements/StatementScene.fxml");
+        
+    }    
+
+    @FXML   private void salaryButtonOnClick(ActionEvent event) {
+        SceneSwitcher.switchToScene(SceneSwitcher.getStageFromEvent(event), "Salary/SalaryScene.fxml");   
     }
 
-    @FXML    private void salaryButtonOnClick(ActionEvent event) {
+    @FXML    private void billSceneButtonOnClick(ActionEvent event) {
+        SceneSwitcher.switchToScene(SceneSwitcher.getStageFromEvent(event), "Bills/BillScene.fxml");
+      
     }
 
-    @FXML
-    private void billSceneButtonOnClick(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("BillScene.fxml"));
-            Parent secondRoot =loader.load();
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                    //(Stage) ((Node) event.getSource()).getScene().getWindow();
+    @FXML    private void budgetSceneButtonOnClick(ActionEvent event) {
+        SceneSwitcher.switchToScene(SceneSwitcher.getStageFromEvent(event), "Budgets/BudgetScene.fxml");
     }
 
-    @FXML
-    private void budgetSceneButtonOnClick(ActionEvent event) {
+    @FXML    private void reportsSceneButtonOnClick(ActionEvent event) {
+        SceneSwitcher.switchToScene(SceneSwitcher.getStageFromEvent(event), "Reports/ReportScene.fxml");
     }
 
-    @FXML
-    private void reportsSceneButtonOnClick(ActionEvent event) {
+    @FXML    private void dealsSceneButtonOnClick(ActionEvent event) {
+        SceneSwitcher.switchToScene(SceneSwitcher.getStageFromEvent(event), "Deals/DealsScene.fxml");
     }
 
-    @FXML
-    private void dealsSceneButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void balanceSheetSceneButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void taxReturnSceneMenuItemOnClick(ActionEvent event) {
+    @FXML    private void balanceSheetSceneButtonOnClick(ActionEvent event) {
+        SceneSwitcher.switchToScene(SceneSwitcher.getStageFromEvent(event), "BalanceSheets/BalanceSheetScene.fxml");
     }
 
     @FXML
-    private void prepareTaxReturnSceneMenuItemOnClick(ActionEvent event) {
+    private void prepareTaxReturnSceneButtonOnClick(ActionEvent event) {
+        SceneSwitcher.switchToScene(SceneSwitcher.getStageFromEvent(event), "TaxesAndTaxReturn/PrepareTaxScene.fxml");
+    }
+
+    @FXML
+    private void taxReturnSceneButtonOnClick(ActionEvent event) {
+        SceneSwitcher.switchToScene(SceneSwitcher.getStageFromEvent(event),"TaxesAndTaxReturn/TaxReturnScene.fxml");
+    
+    }
     }
     
-}
+

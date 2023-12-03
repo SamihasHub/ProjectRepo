@@ -4,23 +4,15 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Bills.BillSceneController">
-   <top>
-      <MenuBar style="-fx-background-color: lavender;" BorderPane.alignment="CENTER">
-        <menus>
-          <Menu fx:id="goDashMenu" mnemonicParsing="false" onAction="#goDashMenuOnClick" text="Dashboard" />
-        </menus>
-      </MenuBar>
-   </top>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Bills.BillSceneController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: f0ffff;" BorderPane.alignment="CENTER">
          <children>
@@ -38,35 +30,34 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="showBillButton" layoutX="524.0" layoutY="52.0" mnemonicParsing="false" onAction="#showBillButtonOnClick" text="Show Bills">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="payBillStgButton" layoutX="184.0" layoutY="330.0" mnemonicParsing="false" onAction="#payBillStgButtonOnClick" text="Pay Bill">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="downloadBillButton" layoutX="512.0" layoutY="330.0" mnemonicParsing="false" onAction="#downloadBillButtonOnClick" text="Download">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
             <CheckBox fx:id="binCheckBox" layoutX="20.0" layoutY="184.0" mnemonicParsing="false" text="Save as BillData.bin" />
             <Text layoutX="305.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Bill of:" wrappingWidth="75.53387451171875" />
-            <TextField fx:id="billTypeTextField" layoutX="370.0" layoutY="52.0" />
-            <TextArea fx:id="billResultTextArea" layoutX="306.0" layoutY="87.0" prefHeight="232.0" prefWidth="281.0" />
-            <ComboBox fx:id="selectbillComboBox" layoutX="18.0" layoutY="330.0" prefWidth="150.0" promptText="Select bill" />
-            <Text layoutX="22.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a Bill To Pay:" wrappingWidth="148.50717163085938">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
             <Text layoutX="19.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bill Number:" />
             <TextField fx:id="billNoTextField" layoutX="90.0" layoutY="131.0" />
-            <Label fx:id="showPreparedBillLabel" layoutX="14.0" layoutY="209.0" prefHeight="91.0" prefWidth="229.0" style="-fx-background-color: white;" />
+            <Label fx:id="showPreparedBillLabel" layoutX="14.0" layoutY="209.0" prefHeight="134.0" prefWidth="229.0" style="-fx-background-color: white; -fx-border-color: blue;" />
+            <Label fx:id="viewBillLabel" layoutX="292.0" layoutY="88.0" prefHeight="265.0" prefWidth="294.0" style="-fx-background-color: white; -fx-border-color: blue;" />
+            <MenuButton layoutX="370.0" layoutY="52.0" mnemonicParsing="false" text="Select Bill">
+              <items>
+                <MenuItem fx:id="openBillMenuItem" mnemonicParsing="false" onAction="#openBillFileChooserMenuItemOnClick" text="Open Bill File" />
+              </items>
+            </MenuButton>
          </children>
       </AnchorPane>
    </center>
+   <top>
+      <AnchorPane prefHeight="0.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="go2DashboardButton" alignment="TOP_RIGHT" layoutX="-6.0" layoutY="1.0" mnemonicParsing="false" onAction="#go2DashboardButtonOnClick" style="-fx-background-color: lavender;" text="Go To DashBoard">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="payBillStgButton" layoutX="103.0" layoutY="1.0" mnemonicParsing="false" onAction="#payBillStgButtonOnClick" style="-fx-background-color: lavender;" text="Pay Bill">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
 </BorderPane>

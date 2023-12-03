@@ -29,6 +29,8 @@ public class PrepareTaxSceneController implements Initializable {
     private TextField yearTextField;
     @FXML
     private Button prepareSaveTaxReturnButton;
+    @FXML
+    private Button goToDashButton;
 
     /**
      * Initializes the controller class.
@@ -44,6 +46,10 @@ public class PrepareTaxSceneController implements Initializable {
 
     @FXML
     private void prepareSaveTaxReturnButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void goToDashButtonOnClick(ActionEvent event) {
     }
     
 }
