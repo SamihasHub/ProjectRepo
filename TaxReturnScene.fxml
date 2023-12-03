@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
@@ -21,7 +19,7 @@
                </font>
             </Text>
             <Text layoutX="21.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Open Tax Return:" />
-            <TextArea fx:id="taxReturnViewTextArea" layoutX="29.0" layoutY="81.0" prefHeight="244.0" prefWidth="542.0" />
+            <TextArea fx:id="taxReturnViewTextArea" editable="false" layoutX="29.0" layoutY="81.0" prefHeight="244.0" prefWidth="542.0" />
             <Button fx:id="payNowButton" layoutX="497.0" layoutY="336.0" mnemonicParsing="false" onAction="#payNow2StgButtonOnClick" text="Pay Now" />
             <Button fx:id="payLaterButton" layoutX="41.0" layoutY="336.0" mnemonicParsing="false" onAction="#payLaterButtonOnClick" text="Pay Later" />
             <MenuButton layoutX="118.0" layoutY="40.0" mnemonicParsing="false" text="Select Tax Return">
@@ -33,14 +31,10 @@
       </AnchorPane>
    </center>
    <top>
-      <MenuBar style="-fx-background-color: lavender;" BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="Home">
-            <items>
-              <MenuItem fx:id="goToDashboardScenceMenuItem" mnemonicParsing="false" onAction="#goToDashboardScenceMenuItemOnClick" text="Dashboard" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
+      <AnchorPane prefHeight="0.0" prefWidth="600.0" style="-fx-background-color: lavender;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="goToDashButton" layoutY="-2.0" mnemonicParsing="false" onAction="#goToDashButtonOnClick" style="-fx-background-color: lavender;" text="Go to Dashboard" />
+         </children>
+      </AnchorPane>
    </top>
 </BorderPane>

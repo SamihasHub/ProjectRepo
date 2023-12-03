@@ -25,10 +25,6 @@ import javafx.scene.control.TextField;
 public class RecordNewStocksSceneController implements Initializable {
 
     @FXML
-    private MenuItem dashboardMenuItem;
-    @FXML
-    private MenuItem viewStocksMenuItem;
-    @FXML
     private TextField nameProTextField;
     @FXML
     private TextField projectStocks;
@@ -46,6 +42,8 @@ public class RecordNewStocksSceneController implements Initializable {
     private TableColumn<?, ?> stocksRecoColumn;
     @FXML
     private TableView<?> newStocksTableView;
+    @FXML
+    private Button goToDashButton;
 
     /**
      * Initializes the controller class.
@@ -55,16 +53,13 @@ public class RecordNewStocksSceneController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void dashboardMenuItemOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void viewStocksMenuItemOnClick(ActionEvent event) {
-    }
 
     @FXML
     private void uploadViewButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void goToDashButtonOnClick(ActionEvent event) {
     }
     
 }

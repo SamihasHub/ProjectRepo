@@ -21,8 +21,6 @@ import javafx.scene.control.TextArea;
 public class TaxReturnSceneController implements Initializable {
 
     @FXML
-    private MenuItem goToDashboardScenceMenuItem;
-    @FXML
     private TextArea taxReturnViewTextArea;
     @FXML
     private Button payNowButton;
@@ -30,6 +28,8 @@ public class TaxReturnSceneController implements Initializable {
     private Button payLaterButton;
     @FXML
     private MenuItem ChooseFileMenuItem;
+    @FXML
+    private Button goToDashButton;
 
     /**
      * Initializes the controller class.
@@ -39,9 +39,6 @@ public class TaxReturnSceneController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void goToDashboardScenceMenuItemOnClick(ActionEvent event) {
-    }
 
     @FXML
     private void payNow2StgButtonOnClick(ActionEvent event) {
@@ -53,6 +50,10 @@ public class TaxReturnSceneController implements Initializable {
 
     @FXML
     private void ChooseFileMenuItemOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void goToDashButtonOnClick(ActionEvent event) {
     }
     
 }

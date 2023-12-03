@@ -25,8 +25,6 @@ import javafx.scene.control.TextField;
 public class ViewStockRecordsSceneController implements Initializable {
 
     @FXML
-    private MenuItem dashboardMenuItem;
-    @FXML
     private MenuItem stockInvenFileChooserMenuItem;
     @FXML
     private TextArea invenStockViewTextArea;
@@ -60,6 +58,8 @@ public class ViewStockRecordsSceneController implements Initializable {
     private Button sendRequiButton;
     @FXML
     private Button checkLevelButton;
+    @FXML
+    private Button goToDashButton;
 
     /**
      * Initializes the controller class.
@@ -69,9 +69,6 @@ public class ViewStockRecordsSceneController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void dashboardMenuItemOnClick(ActionEvent event) {
-    }
 
     @FXML
     private void stockInvenFileChooserMenuItemOnClick(ActionEvent event) {
@@ -91,6 +88,10 @@ public class ViewStockRecordsSceneController implements Initializable {
 
     @FXML
     private void checkLevelButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void goToDashButtonOnClick(ActionEvent event) {
     }
     
 }

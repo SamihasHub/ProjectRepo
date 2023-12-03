@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package Deals;
+package Budgets;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,7 +18,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 
@@ -27,20 +26,14 @@ import javafx.stage.FileChooser;
  *
  * @author Lenovo
  */
-public class ShareStgSceneController implements Initializable {
+public class FXMLShareStgSceneController implements Initializable {
 
-    @FXML
-    private TextField emailTextFielfd;
-    @FXML
-    private Button sendEmailButton;
-    @FXML
-    private MenuButton attatchmentMenueButton;
-    @FXML
-    private MenuItem fileChooserMenuItem;
-    private ArrayList<String> fileTypeList, fileTypeList2;
-    @FXML
-    private Label dealFileLabel;
-
+    @FXML    private TextField emailTextFielfd;
+    @FXML    private Button sendEmailButton;
+    @FXML    private MenuButton attatchmentMenueButton;
+    @FXML    private MenuItem fileChooserMenuItem;
+    @FXML    private Label budgetViewLabel;
+     private ArrayList<String> fileTypeList, fileTypeList2;
     /**
      * Initializes the controller class.
      */
@@ -48,20 +41,14 @@ public class ShareStgSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         fileTypeList = new ArrayList<String>();
-        fileTypeList.add("*.txt");
-        fileTypeList.add("*.doc");
-        fileTypeList.add("*.docx");
-        fileTypeList.add("*.TXT");
-        fileTypeList.add("*.DOC");
-        fileTypeList.add("*.DOCX");
-
+        fileTypeList.add("*.bin");
+        
         fileTypeList2 = new ArrayList<String>();
         fileTypeList2.add("*.*");
-        
     }    
 
-    @FXML
-    private void sendEmailButtonOnClick(ActionEvent event) {
+    @FXML    private void sendEmailButtonOnClick(ActionEvent event) {
+        
         int len = emailTextFielfd.getLength();
         String size = String.valueOf(len);
         
@@ -75,11 +62,10 @@ public class ShareStgSceneController implements Initializable {
         a.setContentText("Email Send!");
         a.showAndWait();
     }
-        
+         
     }
 
-    @FXML
-    private void fileChooserMenuItemOnClick(ActionEvent event) {
+    @FXML    private void fileChooserMenuItemOnClick(ActionEvent event) {
         
         FileChooser fc = new FileChooser();
          fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text files", fileTypeList));
@@ -93,13 +79,11 @@ public class ShareStgSceneController implements Initializable {
                 while(sc.hasNextLine()){
                     str+=sc.nextLine()+"\n";
                 }
-                dealFileLabel.setText(str);
+                budgetViewLabel.setText(str);
             } catch (FileNotFoundException ex) {
                 
             }
         }
-    }
-        
+       
+    } 
 }
-    
-
