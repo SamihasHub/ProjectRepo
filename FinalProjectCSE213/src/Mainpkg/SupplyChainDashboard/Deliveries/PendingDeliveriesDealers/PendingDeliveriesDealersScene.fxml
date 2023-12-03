@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="741.0" style="-fx-background-color: f0ffff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Mainpkg.SupplyChainDashboard.Deliveries.PendingDeliveriesDealers.PendingDeliveriesDealersSceneController">
+   <children>
+      <Text layoutX="187.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Deliveries To Dealers" textAlignment="CENTER" wrappingWidth="740.9999939297559" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <TableView layoutX="68.0" layoutY="74.0" prefHeight="200.0" prefWidth="588.0">
+        <columns>
+          <TableColumn prefWidth="159.0" text="Order Number" />
+          <TableColumn prefWidth="158.0" text="Date of Order" />
+            <TableColumn prefWidth="133.0" text="Column X" />
+            <TableColumn prefWidth="137.0" text="Column X" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
